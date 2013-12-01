@@ -27,7 +27,14 @@
                 <a class="span2" href="/contacts">Контакты</a>
                 <a class="span2" href="/wholesale">Опт</a>
             </div>
-            <?= $this->fetch('content'); ?>
+            <div class="row-fluid page-content">
+                <div class="span3 catalog">
+                    <h3>Каталог</h3>
+                </div>
+                <div class="span9">
+                    <?= $this->fetch('content'); ?>
+                </div>
+            </div>
         </div>
         <div id="push"></div>
     </div>
