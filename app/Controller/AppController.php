@@ -32,4 +32,25 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    protected $_pageTitle = '';
+    protected $_pageTitlePrefix = 'Кочка | ';
+    protected $_pageHeader = false;
+    protected $_moderateFlash = false;
+    public function beforeRender() {
+        parent::beforeRender();
+
+        if($this->name == 'CakeError') {
+            $this->layout = false;
+        }
+
+        //-> Layout data
+        $this->set('__pageTitle', $this->_pageTitlePrefix . $this->_pageTitle);
+        $this->set('__pageHeader', $this->_pageHeader);
+/*
+        //-> User data from session available in View as $__authUser
+        $this->set('__authLoggedIn', $this->Auth->loggedIn() ? true : false);
+
+        $__authUser = $this->Auth->user();
+        $this->set(compact('__authUser'));*/
+    }
 }
