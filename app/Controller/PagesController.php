@@ -47,6 +47,6 @@ class PagesController extends AppController {
  *	or MissingViewException in debug mode.
  */
     public function frontpage() {
-        $this->_pageTitle = 'Главная';
+        $this->_pageTitle = 'Главная страница';
     }
 }
